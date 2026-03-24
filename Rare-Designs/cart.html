@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b0b" />
+    <title>Cart — RARE DESIGNS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+</head>
+
+<body data-page="cart">
+    <div class="loading-screen loading-screen-compact" id="loadingScreen" aria-live="polite" aria-label="Loading cart">
+        <div class="loading-grain"></div>
+        <div class="loading-logo">
+            <span class="loading-top">RARE</span>
+            <div class="loading-line"><span class="loading-line-fill" data-loader-fill></span></div>
+            <span class="loading-bottom">DESIGNS</span>
+            <p class="loading-status" data-loader-status>Loading your cart…</p>
+        </div>
+    </div>
+
+    <header class="site-nav" id="siteNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">RARE DESIGNS</a>
+            <nav class="nav-links" id="navLinks"></nav>
+            <div class="nav-actions">
+                <button class="nav-btn wishlist-btn" onclick="window.location.href='wishlist.html'"
+                    aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="nav-badge" id="wishlistCount">0</span>
+                </button>
+                <button class="nav-btn cart-btn" onclick="window.location.href='cart.html'" aria-label="Cart">
+                    <i class="fas fa-bag-shopping"></i>
+                    <span class="nav-badge" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="mobileNav">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <nav class="mobile-nav-links" id="mobileNavLinks"></nav>
+        </div>
+    </header>
+
+    <div class="page-header page-header-static">
+        <div class="page-header-inner reveal visible">
+            <a href="index.html" class="page-back"><i class="fas fa-arrow-left"></i> Back</a>
+            <h1 class="page-title">Your Cart</h1>
+            <p class="page-desc" id="cartPageCount"></p>
+        </div>
+    </div>
+
+    <main>
+        <div class="cart-layout">
+            <div class="cart-list" id="cartList"></div>
+
+            <aside class="cart-summary" id="cartSummary" hidden>
+                <div class="summary-panel">
+                    <div class="summary-topline">Order summary</div>
+                    <div class="cart-summary-row">
+                        <span class="cart-summary-label">Items</span>
+                        <span class="cart-summary-value" id="cartItemsSummary">0</span>
+                    </div>
+                    <div class="cart-summary-row total">
+                        <span class="cart-summary-label">Total</span>
+                        <span class="cart-summary-value" id="cartTotal">R 0</span>
+                    </div>
+                    <button class="checkout-btn" id="checkoutBtn">Proceed to checkout</button>
+                    <div class="summary-actions">
+                        <a href="index.html#collections" class="secondary-action-btn">Continue shopping</a>
+                        <button class="secondary-action-btn" id="clearCartBtn" type="button">Clear cart</button>
+                    </div>
+                    <p class="summary-note" id="cartSummaryNote">Checkout opens a secure order form and sends the
+                        prepared order details to WhatsApp for payment follow-up.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div class="modal-shell" id="checkoutModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-panel checkout-panel" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+            <button class="modal-close" type="button" data-close-modal aria-label="Close checkout form">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="checkout-head">
+                <p class="checkout-kicker">WhatsApp checkout</p>
+                <h2 id="checkoutTitle">Complete your order</h2>
+                <p>Enter your details and we’ll prepare a WhatsApp order summary for payment and delivery follow-up.</p>
+            </div>
+
+            <form id="checkoutForm" class="checkout-form">
+                <div class="form-grid">
+                    <label class="form-field">
+                        <span>Full name *</span>
+                        <input type="text" name="fullName" placeholder="Your full name" required />
+                    </label>
+
+                    <label class="form-field">
+                        <span>Phone number *</span>
+                        <input type="tel" name="phone" placeholder="Your WhatsApp number" required />
+                    </label>
+
+                    <label class="form-field">
+                        <span>Alternative number</span>
+                        <input type="tel" name="altPhone" placeholder="Optional backup number" />
+                    </label>
+
+                    <label class="form-field">
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" />
+                    </label>
+
+                    <label class="form-field">
+                        <span>City / Area *</span>
+                        <input type="text" name="city" placeholder="City or delivery area" required />
+                    </label>
+
+                    <label class="form-field">
+                        <span>Preferred contact time</span>
+                        <select name="contactTime">
+                            <option value="Any time">Any time</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Afternoon">Afternoon</option>
+                            <option value="Evening">Evening</option>
+                        </select>
+                    </label>
+
+                    <label class="form-field form-field-wide">
+                        <span>Delivery address *</span>
+                        <textarea name="address" rows="3" placeholder="Street address / collection point"
+                            required></textarea>
+                    </label>
+
+                    <label class="form-field">
+                        <span>Delivery method *</span>
+                        <select name="deliveryMethod" required>
+                            <option value="">Select one</option>
+                            <option value="Delivery">Delivery</option>
+                            <option value="Collection">Collection</option>
+                        </select>
+                    </label>
+
+                    <label class="form-field">
+                        <span>Preferred payment</span>
+                        <select name="paymentMethod">
+                            <option value="EFT / Bank transfer">EFT / Bank transfer</option>
+                            <option value="Card payment link">Card payment link</option>
+                            <option value="Cash on collection">Cash on collection</option>
+                            <option value="Need payment options">Need payment options</option>
+                        </select>
+                    </label>
+
+                    <label class="form-field form-field-wide">
+                        <span>Notes</span>
+                        <textarea name="notes" rows="3"
+                            placeholder="Sizing, timing, colour, or any special request"></textarea>
+                    </label>
+                </div>
+
+                <div class="checkout-order-box">
+                    <div class="checkout-order-head">
+                        <span>Order preview</span>
+                        <span id="checkoutOrderCount">0 items</span>
+                    </div>
+                    <div id="checkoutOrderPreview" class="checkout-order-preview"></div>
+                    <div class="checkout-total-row">
+                        <span>Total</span>
+                        <strong id="checkoutPreviewTotal">R 0</strong>
+                    </div>
+                </div>
+
+                <p class="checkout-helper">After you submit, WhatsApp opens with all order details ready to send.</p>
+                <button class="checkout-submit" type="submit">Send order to WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-brand">RARE DESIGNS</span>
+            <span class="footer-copy" id="footerCopy"></span>
+        </div>
+    </footer>
+
+    <a href="#" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <script src="data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

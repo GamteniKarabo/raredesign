@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b0b" />
+    <title>RARE DESIGNS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+</head>
+
+<body data-page="home">
+    <div class="loading-screen" id="loadingScreen" aria-live="polite" aria-label="Loading site">
+        <div class="loading-grain"></div>
+        <div class="loading-orb loading-orb-1"></div>
+        <div class="loading-orb loading-orb-2"></div>
+        <div class="loading-logo">
+            <span class="loading-top">RARE</span>
+            <div class="loading-line"><span class="loading-line-fill" data-loader-fill></span></div>
+            <span class="loading-bottom">DESIGNS</span>
+            <p class="loading-status" data-loader-status>Loading collection experience…</p>
+        </div>
+    </div>
+
+    <header class="site-nav" id="siteNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">RARE DESIGNS</a>
+            <nav class="nav-links" id="navLinks"></nav>
+            <div class="nav-actions">
+                <button class="nav-btn wishlist-btn" onclick="window.location.href='wishlist.html'"
+                    aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="nav-badge" id="wishlistCount">0</span>
+                </button>
+                <button class="nav-btn cart-btn" onclick="window.location.href='cart.html'" aria-label="Cart">
+                    <i class="fas fa-bag-shopping"></i>
+                    <span class="nav-badge" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="mobileNav">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav">
+            <nav class="mobile-nav-links" id="mobileNavLinks"></nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-ambient hero-ambient-1"></div>
+        <div class="hero-ambient hero-ambient-2"></div>
+
+        <div class="hero-content reveal visible">
+            <p class="hero-kicker">Luxury made digital</p>
+            <h1 class="hero-title">
+                <span class="hero-title-top">RARE</span>
+                <span class="hero-title-bottom">DESIGNS</span>
+            </h1>
+            <div class="hero-divider"></div>
+            <p class="hero-sub">CURATED FASHION · LIMITED PIECES · WHATSAPP CHECKOUT</p>
+
+            <div class="hero-actions">
+                <a href="#collections" class="hero-primary">Explore collections</a>
+                <a href="#contact" class="hero-secondary">Contact us</a>
+            </div>
+
+
+            <a href="#collections" class="hero-scroll" aria-label="Scroll to collections">
+                <span class="scroll-label">Scroll</span>
+                <span class="scroll-line"></span>
+            </a>
+        </div>
+    </section>
+
+    <main>
+        <section class="section-intro reveal" aria-labelledby="collectionsHeading">
+            <p class="section-intro-kicker">Mobile-first luxury storefront</p>
+            <div class="section-intro-row">
+                <h2 id="collectionsHeading">Collections that feel polished, responsive, and ready to convert.</h2>
+
+            </div>
+        </section>
+
+        <section class="collections-section" id="collections"></section>
+
+        <section class="contact-section reveal" id="contact">
+            <div class="contact-inner">
+                <p class="contact-eyebrow">Get in touch</p>
+                <h2 class="contact-heading">Let’s find your<br /><em>perfect piece.</em></h2>
+                <p class="contact-copy">Ask about sizing, delivery, custom orders, or payment options and continue
+                    directly on WhatsApp.</p>
+                <a href="#" id="contactWhatsApp" class="contact-cta">Message us on WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-brand">RARE DESIGNS</span>
+            <span class="footer-copy" id="footerCopy"></span>
+        </div>
+    </footer>
+
+    <a href="#" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <script src="data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b0b" />
+    <title>Collection — RARE DESIGNS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+</head>
+
+<body data-page="collection">
+    <div class="loading-screen loading-screen-compact" id="loadingScreen" aria-live="polite"
+        aria-label="Loading collection">
+        <div class="loading-grain"></div>
+        <div class="loading-logo">
+            <span class="loading-top">RARE</span>
+            <div class="loading-line"><span class="loading-line-fill" data-loader-fill></span></div>
+            <span class="loading-bottom">DESIGNS</span>
+            <p class="loading-status" data-loader-status>Loading collection…</p>
+        </div>
+    </div>
+
+    <header class="site-nav" id="siteNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">RARE DESIGNS</a>
+            <nav class="nav-links" id="navLinks"></nav>
+            <div class="nav-actions">
+                <button class="nav-btn wishlist-btn" onclick="window.location.href='wishlist.html'"
+                    aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="nav-badge" id="wishlistCount">0</span>
+                </button>
+                <button class="nav-btn cart-btn" onclick="window.location.href='cart.html'" aria-label="Cart">
+                    <i class="fas fa-bag-shopping"></i>
+                    <span class="nav-badge" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="mobileNav">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <nav class="mobile-nav-links" id="mobileNavLinks"></nav>
+        </div>
+    </header>
+
+    <div class="page-header page-header-collection" id="collectionHeader">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-inner reveal visible">
+            <a href="index.html#collections" class="page-back"><i class="fas fa-arrow-left"></i> Back</a>
+            <div class="page-header-actions">
+                <span class="page-price-range" id="colPrice"></span>
+                <span class="text-link" id="collectionMeta"></span>
+            </div>
+            <h1 class="page-title" id="colTitle">Collection</h1>
+            <p class="page-desc" id="colDesc"></p>
+        </div>
+    </div>
+
+    <main>
+        <section class="section-intro section-intro-compact reveal">
+            <p class="section-intro-kicker">Tap-ready browsing</p>
+            <div class="section-intro-row single">
+                <p>Pick a size, add pieces to cart in one tap, and keep favourites saved with local storage across
+                    visits.</p>
+            </div>
+        </section>
+
+        <div class="product-grid" id="collectionGrid"></div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-brand">RARE DESIGNS</span>
+            <span class="footer-copy" id="footerCopy"></span>
+        </div>
+    </footer>
+
+    <a href="#" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <script src="data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
